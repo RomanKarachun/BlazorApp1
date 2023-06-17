@@ -4,7 +4,9 @@
 @inject UseCases.IViewCategoriesUseCase ViewCategoriesUseCase
 @inject UseCases.IDeleteCategoryUseCase DeleteCategoryUseCase
 
-<h3>Categories</h3>
+<h2>Categories</h2>
+
+<input @oninput="Search" placeholder="Search..." class="p-2" />
 
 @if (categories != null)
 {
@@ -35,6 +37,7 @@
 <br />
 <button type="button" @onclick="OnClickAddCategory" class="btn btn-primary">+</button>
 @code {
+    string st = "asdf asdfasdfasdf löjk asdf asdf asdf asdfasdf asdfasdff";
 
     private List<Category> categories;
 
@@ -62,5 +65,10 @@
     private void LoadCategories()
     {
         categories = ViewCategoriesUseCase.Execute()?.ToList();
+    }
+    private void Search(ChangeEventArgs args)
+    {
+        var searchTerm = (string)args.Value;
+        StateHasChanged();
     }
 }
