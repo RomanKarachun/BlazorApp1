@@ -7,9 +7,9 @@ namespace Plugins.DataStore.SQL
 {
     public class CategoryRepository : ICategoryRepository
     {
-        private readonly MarketContext db;
+        private readonly DB db;
 
-        public CategoryRepository(MarketContext db)
+        public CategoryRepository(DB db)
         {
             this.db = db;
         }

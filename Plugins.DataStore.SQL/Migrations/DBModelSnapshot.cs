@@ -7,8 +7,8 @@ using Plugins.DataStore.SQL;
 
 namespace Plugins.DataStore.SQL.Migrations
 {
-    [DbContext(typeof(MarketContext))]
-    partial class MarketContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(DB))]
+    partial class DBModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -40,37 +40,37 @@ namespace Plugins.DataStore.SQL.Migrations
                         new
                         {
                             CategoryId = 1,
-                            Description = "Desription №1",
+                            Description = "Description №1",
                             Name = "Category №1"
                         },
                         new
                         {
                             CategoryId = 2,
-                            Description = "Desription №2",
+                            Description = "Description №2",
                             Name = "Category №2"
                         },
                         new
                         {
                             CategoryId = 3,
-                            Description = "Desription №3",
+                            Description = "Description №3",
                             Name = "Category №3"
                         },
                         new
                         {
                             CategoryId = 4,
-                            Description = "Desription №4",
+                            Description = "Description №4",
                             Name = "Category №4"
                         },
                         new
                         {
                             CategoryId = 5,
-                            Description = "Desription №5",
+                            Description = "Description №5",
                             Name = "Category №5"
                         },
                         new
                         {
                             CategoryId = 6,
-                            Description = "Desription №6",
+                            Description = "Description №6",
                             Name = "Category №6"
                         });
                 });

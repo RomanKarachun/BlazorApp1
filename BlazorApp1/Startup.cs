@@ -29,16 +29,16 @@ namespace BlazorApp1
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
 
-            services.AddDbContext<MarketContext>(options =>
+            services.AddDbContext<DB>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("AppDB"));
             });
 
             //Memory
-            services.AddScoped<ICategoryRepository, CategoryInMemoryRepository>();
+            //services.AddScoped<ICategoryRepository, CategoryInMemoryRepository>();
 
             //SQL
-            //services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             services.AddTransient<IViewCategoriesUseCase, ViewCategoriesUseCase>();
             services.AddTransient<IAddCategoryUseCase, AddCategoryUseCase>();
