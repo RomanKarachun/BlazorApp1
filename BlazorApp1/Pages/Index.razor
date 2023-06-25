@@ -6,8 +6,6 @@
 
 <h2>Categories</h2>
 
-<input @oninput="Search" placeholder="Search..." class="p-2" />
-
 @if (categories != null)
 {
     <table class="table">
@@ -34,7 +32,6 @@
         </tbody>
     </table>
 }
-<br />
 <button type="button" @onclick="OnClickAddCategory" class="btn btn-primary">+</button>
 @code {
 
@@ -65,9 +62,11 @@
     {
         categories = ViewCategoriesUseCase.Execute()?.ToList();
     }
-    private void Search(ChangeEventArgs args)
+    /* метод поиска (бэк не проработан)
+     * <input @oninput="Search" placeholder="Search..." class="p-2" /> -- вставить в начале
+     * private void Search(ChangeEventArgs args)
     {
         var searchTerm = (string)args.Value;
         StateHasChanged();
-    }
+    } */
 }

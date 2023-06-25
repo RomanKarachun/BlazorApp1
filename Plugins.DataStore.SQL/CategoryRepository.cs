@@ -45,5 +45,6 @@ namespace Plugins.DataStore.SQL
             cat.Description = category.Description;
             db.SaveChanges();
         }
+
     }
 }
